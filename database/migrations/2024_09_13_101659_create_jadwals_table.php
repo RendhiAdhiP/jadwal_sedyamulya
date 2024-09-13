@@ -11,14 +11,23 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('jadwals', function (Blu eprint $table) {
+        Schema::create('jadwals', function (Blueprint $table) {
             $table->id();
-            $table->string('tanggal');
+            $table->date('tanggal');
             $table->string('start');
             $table->string('finish');
-            $table->string('crew');
-            $table->string('keterangan');
-            $table->foreignId('admin_id')->constrained('admins')->cascadeOnDelete();
+
+            $table->bigInteger('crew1_id')->unsigned();
+            $table->bigInteger('crew2_id')->unsigned()->nullable();
+            $table->bigInteger('crew3_id')->unsigned()->nullable();
+
+            $table->text('keterangan')->nullable();
+
+            $table->foreign('crew1_id')->references('id')->on('crews')->onDelete('cascade');
+            $table->foreign('crew2_id')->references('id')->on('crews')->onDelete('cascade');
+            $table->foreign('crew3_id')->references('id')->on('crews')->onDelete('cascade');
+            
+            
             $table->timestamps();
         });
     }
