@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('jadwals', function (Blueprint $table) {
+        Schema::create('jadwals', function (Blu eprint $table) {
             $table->id();
             $table->string('tanggal');
             $table->string('start');
