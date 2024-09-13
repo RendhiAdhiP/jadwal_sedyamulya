@@ -1,14 +1,14 @@
 <?php
 
-namespace App\Filament\Resources\AdminResource\Pages;
+namespace App\Filament\Resources\CrewsResource\Pages;
 
-use App\Filament\Resources\AdminResource;
+use App\Filament\Resources\CrewsResource;
 use Filament\Actions;
 use Filament\Resources\Pages\ListRecords;
 
-class ListAdmins extends ListRecords
+class ListCrews extends ListRecords
 {
-    protected static string $resource = AdminResource::class;
+    protected static string $resource = CrewsResource::class;
 
     protected function getHeaderActions(): array
     {
