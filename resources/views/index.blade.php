@@ -24,7 +24,7 @@
         thead th {
             position: sticky;
             top: 0;
-            background: #f0f0f0;
+            background: yellow;
             z-index: 1;
         }
         .number-column {
