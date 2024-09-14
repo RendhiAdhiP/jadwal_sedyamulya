@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\jadwal;
+use Carbon\Carbon;
 
 class jadwalController extends Controller
 {
@@ -13,6 +14,12 @@ class jadwalController extends Controller
     public function index()
     {
         $jadwals = jadwal::all();
+
+        $jadwals = $jadwals->map(function ($jadwal) {
+            // Format tanggal menjadi d-m-Y
+            $jadwal->tanggal = Carbon::createFromFormat('Y-m-d', $jadwal->tanggal)->format('d-m-Y');
+            return $jadwal;
+        });
         $buses = ['MASARTO', 'MASBOGIE', 'SHAYNA', 'NAJWA', 'JULIAN', 'KARTIKA', 'ABIYOSO'];
         return view('index', compact('jadwals', 'buses'));
     }
