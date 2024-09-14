@@ -14,8 +14,5 @@ use App\Http\Controllers\jadwalController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
-Route::get('jadwal', [jadwalController::class, 'index']);
+Route::get('/', [jadwalController::class, 'index']);

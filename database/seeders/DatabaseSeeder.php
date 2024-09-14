@@ -15,21 +15,32 @@ class DatabaseSeeder extends Seeder
     {
         \App\Models\Crews::create([
             'nama' => 'andre',
+            'kategori'=>'Driver'
         ]);
         \App\Models\Crews::create([
             'nama' => 'wahyu',
+            'kategori'=>'Driver'
+
         ]);
         \App\Models\Crews::create([
             'nama' => 'bejo',
+            'kategori'=>'Co Driver'
+
         ]);
         \App\Models\Crews::create([
             'nama' => 'waloyo',
+            'kategori'=>'Driver'
+
         ]);
         \App\Models\Crews::create([
             'nama' => 'garong',
+            'kategori'=>'Co Driver'
+
         ]);
         \App\Models\Crews::create([
             'nama' => 'joko',
+            'kategori'=>'Co Driver'
+
         ]);
 
 
