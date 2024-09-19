@@ -13,7 +13,9 @@ return new class extends Migration
     {
         Schema::create('crews', function (Blueprint $table) {
             $table->id();
+            $table->integer('id_crew')->unique();
             $table->string('nama');
+            $table->string('password');
             $table->string('kategori')->nullable();
             $table->timestamps();
         });

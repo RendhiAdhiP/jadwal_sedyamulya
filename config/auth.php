@@ -38,7 +38,12 @@ return [
     'guards' => [
         'web' => [
             'driver' => 'session',
-            'provider' => 'users',
+            'provider' => 'users',  // Guard default untuk admin (filament)
+        ],
+    
+        'crew' => [
+            'driver' => 'session',
+            'provider' => 'crews',  // Guard untuk crew
         ],
     ],
 
@@ -62,13 +67,13 @@ return [
     'providers' => [
         'users' => [
             'driver' => 'eloquent',
-            'model' => App\Models\User::class,
+            'model' => App\Models\User::class,  
         ],
-
-        // 'users' => [
-        //     'driver' => 'database',
-        //     'table' => 'users',
-        // ],
+    
+        'crews' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Crews::class,  
+        ],
     ],
 
     /*
@@ -93,6 +98,13 @@ return [
     'passwords' => [
         'users' => [
             'provider' => 'users',
+            'table' => 'password_reset_tokens',
+            'expire' => 60,
+            'throttle' => 60,
+        ],
+
+        'crew' => [
+            'provider' => 'crews',
             'table' => 'password_reset_tokens',
             'expire' => 60,
             'throttle' => 60,

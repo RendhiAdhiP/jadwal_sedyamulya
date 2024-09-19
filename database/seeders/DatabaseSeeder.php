@@ -14,30 +14,42 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         \App\Models\Crews::create([
+            'id_crew' => '001',
+            'password' => Hash::make('andre001'),
             'nama' => 'andre',
             'kategori'=>'Driver'
         ]);
         \App\Models\Crews::create([
+            'id_crew' => '002',
+            'password' => Hash::make('wahyu002'),
             'nama' => 'wahyu',
             'kategori'=>'Driver'
 
         ]);
         \App\Models\Crews::create([
+            'id_crew' => '003',
+            'password' => Hash::make('bejo003'),
             'nama' => 'bejo',
             'kategori'=>'Co Driver'
 
         ]);
         \App\Models\Crews::create([
+            'id_crew' => '004',
+            'password' => Hash::make('waloyo004'),
             'nama' => 'waloyo',
             'kategori'=>'Driver'
 
         ]);
         \App\Models\Crews::create([
+            'id_crew' => '005',
+            'password' => Hash::make('garong005'),
             'nama' => 'garong',
             'kategori'=>'Co Driver'
 
         ]);
         \App\Models\Crews::create([
+            'id_crew' => '006',
+            'password' => Hash::make('joko006'),
             'nama' => 'joko',
             'kategori'=>'Co Driver'
 

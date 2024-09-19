@@ -4,15 +4,23 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class Crews extends Model
+class Crews extends Authenticatable
 {
     use HasFactory;
 
     protected $fillable = 
     [
+        'id_crew',
+        'password',
         'nama',
-        'kategori'
+        'kategori',
     ];
+
+    public function getAuthPassword()
+    {
+        return $this->password;
+    }
     
 }

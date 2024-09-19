@@ -24,12 +24,19 @@ class CrewsResource extends Resource
     {
         return $form
             ->schema([
+                Forms\Components\TextInput::make('id_crew')
+                    ->numeric()
+                    ->minValue(1)
+                    ->maxValue(999),
+                Forms\Components\TextInput::make('password')
+                    ->password()
+                    ->revealable(),
                 Forms\Components\TextInput::make('nama'),
                 Forms\Components\Select::make('kategori')
-                ->options([
-                    'Driver' => 'Driver',
-                    'Co Driver' => 'Co Driver',
-                ]),
+                    ->options([
+                        'Driver' => 'Driver',
+                        'Co Driver' => 'Co Driver',
+                    ]),
             ]);
     }
 
@@ -37,6 +44,7 @@ class CrewsResource extends Resource
     {
         return $table
             ->columns([
+                Tables\Columns\TextColumn::make('id_crew')->sortable(),
                 Tables\Columns\TextColumn::make('nama')->searchable(),
                 Tables\Columns\TextColumn::make('kategori')->sortable(),
             ])

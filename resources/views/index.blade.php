@@ -65,7 +65,6 @@
 </head>
 
 <body>
-    {{-- {{ dd($jadwals); }} --}}
     <table>
         <thead>
             <tr>
