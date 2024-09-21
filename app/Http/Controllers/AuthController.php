@@ -13,21 +13,17 @@ class AuthController extends Controller
 
     public function login(Request $request)
     {
-        // dd($request->all());
         $request->validate([
             'id_crew' => 'required',
             'password' => 'required',
         ]);
-
+    
         $credentials = $request->only('id_crew', 'password');
-
-
+    
         if (auth()->guard('crew')->attempt($credentials)) {
-            return redirect('/jadwal');
+            return redirect('/jadwal')->with('success', 'Login Berhasil');
         } else {
-            return redirect('/');
+            return redirect('/')->with('error', 'ID Crew atau password salah');
         }
-
-
     }
 }

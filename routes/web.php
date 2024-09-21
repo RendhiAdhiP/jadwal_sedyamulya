@@ -16,13 +16,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/a', function () {
-    return view('welcome');
-});
+
+Route::get('/login',function(){
+    return redirect(route('index'));
+})->name('login');
 
 Route::get('/jadwal',[jadwalController::class, 'index'])->middleware('auth:crew');
-Route::get('/',[AuthController::class, 'index']);
-Route::post('/login',[AuthController::class, 'login']);
+Route::get('/',[AuthController::class, 'index'])->name('index');
+Route::post('/login',[AuthController::class, 'login'])->name('login.crew');
 
-
-require __DIR__.'/auth.php';

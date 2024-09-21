@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -42,13 +43,27 @@
         }
     </style>
 </head>
+
 <body>
 
     <div class="login-container">
         <h3 class="text-center mb-4">Crew Login</h3>
-        
+
+        @if (session('success'))
+            <div class="alert alert-success">
+                {{ session('success') }}
+            </div>
+        @endif
+
+        <!-- Menampilkan pesan error -->
+        @if (session('error'))
+            <div class="alert alert-danger">
+                {{ session('error') }}
+            </div>
+        @endif
+
         <!-- Login form -->
-        <form method="POST" action="{{ url('login') }}">
+        <form method="POST" action="{{ route('login.crew') }}">
             @csrf
             <div class="mb-3">
                 <label for="id_crew" class="form-label">ID Crew</label>
@@ -69,4 +84,5 @@
     <!-- Bootstrap JS and dependencies -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
