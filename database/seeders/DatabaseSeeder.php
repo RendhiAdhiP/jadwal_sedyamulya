@@ -13,14 +13,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        \App\Models\Crews::create([
-            'id_crew' => '006',
-            'password' => Hash::make('joko006'),
-            'nama' => 'joko',
-            'kategori'=>'Co Driver'
-
-        ]);
-
 
         \App\Models\User::create([
             'name' => 'Admin',
